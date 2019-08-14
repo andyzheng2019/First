@@ -1,44 +1,60 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Used following packages
 
-In the project directory, you can run:
+npm install react-responsive --save
+        determine the screen type( desktop, medium, mobile or small )
+npm install react-bootstrap bootstrap
+        setup the layout for mobile or desktop(desktop: one row two pictures; mobile: one row one picture)
+npm install --save react-redux
+npm install --save redux-thunk
+        use for redux and thunk
+npm install --save react-router
+npm install --save react-router-dom
+        use for router
+npm install -g tslint typescript
+        use for lint
+npm install --save-dev jest
+        use for test
+    
+## Components
 
-### `npm start`
+Recipe component
+        display the image (basing on browser resolution and screen 1x/2x/3x) and the title
+RecipesContainer
+        display all the Recipe components, the data is fetched in 'componentDidMount'
+Redux folder
+        contain the actions and reducers
+Test folder
+        test files are created under this folder.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Run steps
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+clone code and run the following commands
+npm i
+npm start
+npm test
 
-### `npm test`
+## what has been done
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Setup a mockup api
+Styled the component
+For different screen 1x/2x/3x and brower resolution, used different pictures. eg, for 1x screen, big resolution, will use desktop1x picture, for 2x screen, mobile resolution, will use mobile2x picture(When adjust the browser size, the layout will be changed according to the width and the used pictures will also be changed to use the correct one, like changing between desktop, mobile, medium and small)
+Used a router
+Used redux and thunk for mapping the data and process the data
 
-### `npm run build`
+## what can be improved
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Adjust css style to do more accurately design
+Add more precise mockup data or use graphql
+Add support for processing /recipe/1 for details of each recipe
+Add smooth image loading(https://arunmichaeldsouza.com/blog/loading-images-gracefully-with-react-image-appear) (or stream loading)
+Add more testing code for components and redux parts
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## lint
+tslint -c tslint.json 'src/**/*.ts'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Web site
+http://andyzheng.s3-website-ap-southeast-2.amazonaws.com/
+ 
+ 
