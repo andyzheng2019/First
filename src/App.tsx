@@ -1,11 +1,10 @@
-
-import logo from './logo.svg';
-import './App.css';
 import React, { Suspense } from 'react';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import './App.css';
 import RecipesContainer from './Components/RecipesContainer';
 import Home from './Components/Home';
-
 
 const App: React.FC = () => {
   return (

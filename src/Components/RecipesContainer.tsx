@@ -1,6 +1,7 @@
 import React from "react";
 import {Container,Row} from "react-bootstrap"
 
+import Recipe from './Recipe'
 import getAllRecipeData from '../redux/actions/actionCreators'
 import { connect } from "react-redux";
 import { IRecipeData } from "../CommonType/RecipeData";
@@ -18,7 +19,24 @@ class RecipesContainer extends React.PureComponent<ContainerProps>{
     }
     
     render(){
-        return <h1>Welcome to recipes, click <a href='/'>here</a> to go back home page</h1>
+         
+        let items = [] 
+        if(this.props.data !== undefined){
+            let len = this.props.data.length
+            for(let i = 0;i<len/2;i++){
+                let item = <Row key={this.props.data[i].key}><Recipe {...this.props.data[2*i]}></Recipe><Recipe {...this.props.data[2*i+1]}></Recipe></Row>
+                items.push(item)
+            }
+            if(len % 2 !== 0){
+                let item = <Row key={this.props.data[len-1].key}><Recipe {...this.props.data[len-1]}></Recipe></Row>
+                items.push(item)
+            }
+        }
+
+        return <Container>
+            <       h1>Welcome to recipes, click <a href='/'>here</a> to go back home page</h1>
+                     {items.map(item=> item)}
+               </Container>
     }
 
 }
