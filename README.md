@@ -1,3 +1,6 @@
+## Note
+Please download the file to read due to the wrong format in web browser
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Used following packages
